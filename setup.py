@@ -14,6 +14,7 @@ setup(
     long_description=read_file("README.md"),
     author="bennr01",
     author_email="benjamin99.vogt@web.de",
+    url="https://github.com/bennr01/kvndb/",
     license="MIT",
     packages=["kvndb"],
     zip_safe=False,
@@ -30,6 +31,12 @@ setup(
     entry_points={
         "console_scripts": [
             "kvndb=kvndb.runner:run",
+            ],
+        },
+    package_data={
+        "": [
+            "LICENSE",
+            "README.md",
             ],
         },
     )

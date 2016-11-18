@@ -15,7 +15,7 @@ def read_file(path, ignore=False):
 
 setup(
     name="kvndb",
-    version="0.1.1",
+    version="0.1.2",
     description="A modular Key/Value Network Database server+client using twisted",
     long_description=read_file("README.md", ignore=True),
     author="bennr01",

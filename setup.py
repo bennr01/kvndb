@@ -2,16 +2,22 @@
 from setuptools import setup
 
 
-def read_file(path):
-    with open(path, "r") as f:
-        return f.read()
+def read_file(path, ignore=False):
+    try:
+        with open(path, "r") as f:
+            return f.read()
+    except IOError:
+        if ignore:
+            return "<ERROR READING FILE>"
+        else:
+            raise
 
 
 setup(
     name="kvndb",
     version="0.1.1",
     description="A modular Key/Value Network Database server+client using twisted",
-    long_description=read_file("README.md"),
+    long_description=read_file("README.md", ignore=True),
     author="bennr01",
     author_email="benjamin99.vogt@web.de",
     url="https://github.com/bennr01/kvndb/",
